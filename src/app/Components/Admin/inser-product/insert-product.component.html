@@ -1,0 +1,38 @@
+<div class="container my-5">
+    <form class="mx-5" (ngSubmit)="InsertNewProduct(product)">
+        <div class="form-group m-3">
+            <label for="exampleInputName">Product Name</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby=""
+                placeholder="Enter Your Product Name" [(ngModel)]="product.name" name="name">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group m-3">
+            <label for="exampleInputPrice">Price</label>
+            <input type="text" class="form-control" id="exampleInputPrice" 
+                placeholder="Enter Product Price" [(ngModel)]="product.price" name="price">
+        </div>
+        <div class="form-group m-3">
+            <label for="exampleInputQuantity">Quantity</label>
+            <input type="text" class="form-control" id="exampleInputQuantity"
+                placeholder="Enter Product Quantity" [(ngModel)]="product.quantity" name="quantity">
+        </div>
+        <div class="form-group m-3">
+            <label for="exampleInputMaterial">Material Of Product</label>
+            <input type="text" class="form-control" id="exampleInputMaterial" 
+                placeholder="Enter Product Material" [(ngModel)]="product.Material" name="Material">
+        </div>
+        <div class="form-group m-3">
+            <label for="exampleInputImage">Image Url</label>
+            <input type="text" class="form-control" id="exampleInputImage" placeholder="Enter Image Url" [(ngModel)]="product.PrdimgURL" name="image">
+        </div>
+        <div class="form-group m-3">
+            <label for="">Select Category</label>
+            <select class="form-select my-3" id="" [(ngModel)]="product.categoryID" name="categoryID">
+                @for(category of categories; track category.id){
+                <option [value]="category.id">{{ category.name }}</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-warning m-3">Submit</button>
+    </form>
+</div>

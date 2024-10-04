@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="" width="80" height="44">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link"  routerLink="/Home"
+                     routerLinkActive="active-link"   >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/Products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/Contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/About">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/ObsAndOperator"> Observable And Operator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/InsertProduct">Insert New Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/ListProduct">List All Product</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-success mx-4"  [hidden]="userLog" routerLink="/UserLogin">Login</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-danger mx-4" (click)="logout()" [hidden]="!userLog" routerLink="/Home">Logout</button>
+                </li>
+          
+            </ul>
+            <a routerLink="cart">
+                <i class="fa-sharp fa-solid fa-cart-plus modifyIcon"></i>
+            </a>
+        </div>
+    </div>
+</nav>

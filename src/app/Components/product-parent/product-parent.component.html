@@ -1,0 +1,32 @@
+<form class="">
+    <label for="" class="form-label">Search By Name</label>
+    <input type="text" class="form-control me-1" name="filter" id="filter" [(ngModel)]="filterByName"
+        placeholder="Search" aria-label="Search">
+</form>
+
+<app-proudcts [filterByNameFromParent]="filterByName" (NewPrdInCart)="cart($event)"></app-proudcts>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Purchase Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(product of proudctInCart; track product.id){
+        <tr>
+            <td scope="row">{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.purchaseDate }}</td>
+        </tr>
+
+        }
+    </tbody>
+</table>

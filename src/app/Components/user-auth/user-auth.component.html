@@ -1,0 +1,72 @@
+<div class="container my-5">
+
+    <form class="border p-4" [formGroup]="userLoginForm">
+        <!-- Email input -->
+        <div class="m-4">
+            <label class="form-label" for="form2Example1">Email : </label>
+            <input type="email" id="form2Example1" class="form-control" formControlName="email"
+                [ngClass]="{ 'is-invalid': (email?.touched || email?.dirty) && email?.invalid }" />
+            <span class="invalid-feedback">
+                @if(email?.errors?.['required']){
+                <span class="text-danger">email is required</span>
+                }
+                @if(email?.errors?.['email']){
+                <span class="text-danger">email is not valid </span>
+                }
+            </span>
+        </div>
+
+
+        <!-- Password input -->
+        <div class="m-4">
+            <label class="form-label" for="form2Example2">Password :</label>
+            <input type="password" id="form2Example2" class="form-control" formControlName="password"
+                [ngClass]="{ 'is-invalid': (password?.touched || password?.dirty) && password?.invalid }" />
+            <span class="invalid-feedback">
+                @if(password?.errors?.['required']){
+                <span class="text-danger">Password is required</span>
+                }
+                @if(password?.errors?.['minlength']){
+                <span class="text-danger">Password must be at least 6 characters</span>
+                }
+            </span>
+        </div>
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" class="btn btn-success form-control btn-block mb-4 text-center" (click)="login()">Sign
+            in</button>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+            <p>Not a member? <a routerLink="/UserRegister">Register</a></p>
+            <p>or sign up with:</p>
+            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+            </button>
+
+            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+            </button>
+        </div>
+    </form>
+
+</div>
